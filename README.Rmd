@@ -19,6 +19,8 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/BIGslu/r_pkg_check/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/BIGslu/r_pkg_check/actions/workflows/check-standard.yaml)
 <!-- badges: end -->
 
+
+
 ### Create package in a new directory (RStudio)
 
 Create new project (right top of RStudio or File -> New Project) and select R
@@ -170,7 +172,7 @@ check-out to the repository to access it and run GH A workflows. The second is
 used to set up and allow to run `R` code in the workflow
 - `- run: echo $GITHUB_WORKSPACE` - commands to be run. E.g. `$GITHUB_WORKSPACE`
 is a repo internal variable, print current working directory
-- `- run: |` - note `|` - it allows to write commands in multiple runs. To run R
+- `- run: |` - note `|` - it allows to write commands in multiple lines. To run R
 code, use `R -e <code`. It opens `R` session inside GH A workflow and runs the 
 code. Note the `;` after function calls - this is to separate expressions,
 the same as you would run multiple function calls in one line in R studio - 
@@ -208,6 +210,7 @@ strategy:
 an object `matrix.R` is created that will the job for each of the specified
 versions here. Note: same strategy was used to test `R-CMD-Check` on multiple
 operating systems. 
+
 - `name: R ${{ matrix.R }} ver-test` - name is set for each job. In GH A, you 
 will see for example `R 3.6.1 ver-test`. This iteratively updates the name. We 
 refer to the matrix object using `${{ }}`

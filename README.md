@@ -196,12 +196,15 @@ What is new here:
 
 an object `matrix.R` is created that will the job for each of the
 specified versions here. Note: same strategy was used to test
-`R-CMD-Check` on multiple operating systems. -
-`name: R ${{ matrix.R }} ver-test` - name is set for each job. In GH A,
-you will see for example `R 3.6.1 ver-test`. This iteratively updates
-the name. We refer to the matrix object using `${{ }}` - using `with`
-lets us use each version from `matrix.R` inside `R` container
-`r-lib/actions/setup-r@v2` we specified.
+`R-CMD-Check` on multiple operating systems.
+
+-   `name: R ${{ matrix.R }} ver-test` - name is set for each job. In GH
+    A, you will see for example `R 3.6.1 ver-test`. This iteratively
+    updates the name. We refer to the matrix object using `${{ }}`
+-   using `with` lets us use each version from `matrix.R` inside `R`
+    container `r-lib/actions/setup-r@v2` we specified.
+
+<!-- -->
 
     with:
       r-version: ${{ matrix.R }}
